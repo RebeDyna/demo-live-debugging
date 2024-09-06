@@ -43,7 +43,7 @@ spec:
               - ALL
           privileged: false
           readOnlyRootFilesystem: true
-        image: jhendrick/adservice
+        image: jhendrick/adservice:v0.10.2
         ports:
         - containerPort: 9555
         env:

@@ -109,8 +109,8 @@ public final class AdService {
           allAds = service.getRandomAds();
         }
 
-        // Return an empty ad 50% of the time
-        int randomNum = getRandomNumberUsingNextInt(0,2);
+        // Return an empty ad 33% of the time
+        int randomNum = getRandomNumberUsingNextInt(0,3);
         if (randomNum == 0) {
           allAds.clear();
           allAds.add(Ad.newBuilder()
