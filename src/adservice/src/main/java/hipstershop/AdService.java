@@ -115,7 +115,7 @@ public final class AdService {
           allAds.clear();
           allAds.add(Ad.newBuilder()
             .setRedirectUrl("")
-            .setText("")
+            .setText("Something went wrong")
             .build());
         }
         
