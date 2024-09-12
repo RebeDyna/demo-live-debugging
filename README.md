@@ -79,19 +79,31 @@ nohup kubectl port-forward deployment/frontend 8080:8080 &
 
 6. Click the popup that appears to open the application in a new tab, or navigate to the "Ports" tab from the terminal and copy the URL from the row with port 8080.
 
+![screenshot](screenshots/online-boutique.jpg)
+
 7. The application contains a bug where product ads are disappearing 25% of the time. We'll take a look at how we can capture live data using the Live Debugger and also make a fix, then validate the results directly in the VSCode IDE.
 
 8. Navigate to a Product page where you'll see an Ad section. Refresh the page a few times and you'll see in some cases the ad is disappearing. Let's set some non-breaking breakpoints to validate what data we're actually getting back within the code.
 
+![screenshot](screenshots/online-boutique-ad.jpg)
+
 9. Navigate to the Live Debugger app within the Dynatrace tenant and click the 'Debug Configuration' button to select the service we want to debug. In the 'Filter by:' text box, type in 'AdService' and select one of the labels for the Ad Service, for example 'dt.kubernetes.workload.name: adservice' and click next.
 
+![screenshot](screenshots/filter-adservice.jpg)
+
 10. Next you'll need to click the "+" button and select the 'Local Filesystem' option to download the Dynatrace Desktop App. Install the desktop app and start it up. Note that you'll also need to clone this repository so that you have the code locally on your system. Once done, navigate to the repository on your local system and choose 'Done' to be taken into the debugger.
+
+![screenshot](screenshots/add-repo.jpg)
 
 11. Navigate to the AdService.java file by navigating the file system or by using the search button (Cmd/Ctrl+Shift+F)
 
 12. Set a breakpoint on Line 122 by clicking to the left of the line number in the gutter. Go back to your application on the product page and refresh a few times until you see one of the ads disappear and then stop.
 
+![screenshot](screenshots/set-non-breaking-bp.jpg)
+
 13. Navigate back to the Live Debugger and view the collected snapshots. You should see the most recent captured snapshot data contains a variable called 'allAds' which contains a single ad with empty data for the 'text_' and 'redirectUrl_' fields. This is likely the root of the problem, it's expecting to receive valid data, but the ad data is empty.
+
+![screenshot](screenshots/snapshot.jpg)
 
 14. We'll now go back to our Codespaces VSCode IDE to fix the issue, redeploy the AdService and then validate the issue by collecting data directly in the IDE.
 
@@ -122,6 +134,15 @@ skaffold run -f=skaffold-adservice.yaml
 
 20. Click on 'Log In'. A browser should open where you can authenticate. After logging in, you can open your locally cloned repository by going to File > Open and browsing to the live debugging microservices project you cloned. Let's open the AdService.java file under 'src/adservice/main/java/hipstershop/AdService.java.
 
-21. Before settings a breakpoint, we need to make sure to choose the correct Environment and Filters to use within the extension. In the top right corner of the Dynatrace Snapshots terminal window you'll see a cloud icon. Click on it and set the same tenant environment you've been using for the exercises so far. Next click on the pencil icon and set the same filter that you used previously, for example, 'dt.kubernetes.workload.name: adservice'. 
+21. Before settings a breakpoint, we need to make sure to choose the correct Environment and Filters to use within the extension. In the top right corner of the Dynatrace Snapshots terminal window you'll see a cloud icon. Click on it and set the same tenant environment you've been using for the exercises so far. Next click on the pencil icon and set the same filter that you used previously, for example, 'dt.kubernetes.workload.name: adservice'.
 
-22. Finally we're ready to set a breakpoint. You will have a new type of breakpoint available that can be set after installing the Code Monitoring extension. In AdService.java right click to the left of line 122 and select 'Add Live Debugging Breakpoint'. Now go back to your shop application on the product page and refresh a few times until you see snapshots appear in your IDE. Validate that the bug was fixed and you no longer see ads with empty text.
+![screenshot](screenshots/vscode-filter.jpg)
+
+22. Finally we're ready to set a breakpoint. You will have a new type of breakpoint available that can be set after installing the Code Monitoring extension. In AdService.java right click to the left of line 122 and select 'Add Live Debugging Breakpoint'.
+
+![screenshot](screenshots/vscode-add-bp.jpg)
+
+
+23. Now go back to your shop application on the product page and refresh a few times until you see snapshots appear in your IDE. Validate that the bug was fixed and you no longer see ads with empty text.
+
+![screenshot](screenshots/vscode_dynatrace_snapshot.jpg)
