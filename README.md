@@ -1,11 +1,11 @@
-# Dynatrace Live Debugger End to End Demo Enviornment
+# Dynatrace Live Debugger End to End Demo Environment
 
 The Demo environment will showcase the following:
 
-- Setup of the Dynatrace OneAgent within a local Kuberentes cluster
-- Debugging an application issue with Dynatraces Live Debugger
+- Setup of the **Dynatrace OneAgent** within a local Kuberentes cluster
+- Debugging an application issue with **Dynatrace Live Debugger**
 - Fixing a bug, rebuilding and deploying the fix to the cluster using Skaffold
-- Validating the fix directly within the VSCode IDE using Dynatraces Code Monitoring extension
+- Validating the fix directly within the VSCode IDE using **Dynatrace Code Monitoring** extension
 
 ## Architecture
 
@@ -30,7 +30,7 @@ languages that talk to each other over gRPC. It's setup to run inside a Kind Kub
 
 ## Quickstart
 
-1. Start a codespaces workspace by going to Codespaces and then selecting 'New with options' or by [clicking here](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=846712282&skip_quickstart=true). You will need your Dynatrace tenenant endpoint which should look something like 'https://abcd1234.live.dynatrace.com' as well as a Dynatrace API Token.
+1. Start a codespaces workspace by going to Codespaces and then selecting 'New with options' or by [clicking here](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=846712282&skip_quickstart=true). You will need your Dynatrace tenant endpoint which should look something like 'https://abcd1234.live.dynatrace.com' as well as a Dynatrace API Token.
 
 2. The codespace will automatically create a [Kind](https://kind.sigs.k8s.io/) Kubernetes cluster and deploy the microservices application. Once the codespaces is started the following services should be running in the Kind cluster:
 
