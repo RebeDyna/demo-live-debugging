@@ -26,8 +26,7 @@
 				"gruntfuggly.todo-tree",
 				"mutantdino.resourcemonitor",
 				"humao.rest-client",
-				"ms-vscode.makefile-tools",
-				"dynatrace.dynatrace-debugging-extension"
+				"ms-vscode.makefile-tools"
 			]
 		}
 	},
