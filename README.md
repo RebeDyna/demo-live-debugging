@@ -5,7 +5,7 @@ The Demo environment will showcase the following:
 - Setup of the **Dynatrace OneAgent** within a local Kuberentes cluster
 - Debugging an application issue with **Dynatrace Live Debugger**
 - Fixing a bug, rebuilding and deploying the fix to the cluster using Skaffold
-- Validating the fix directly within the VSCode IDE using **Dynatrace Code Monitoring** extension
+- Validating the fix directly within a local VSCode IDE using the **Dynatrace Code Monitoring** extension
 
 ## Architecture
 
@@ -69,7 +69,7 @@ It should be in a `Running` state:
   kind-k8s   https://abc123.live.dynatrace.com/api     Running      98s
   ```
 
-4. You will also have a VSCode environment with the Dynatrace Code Monitoring extension installed. This is where you will be able to make code changes to fix an application bug, redeploy the changes to the cluster, and then set Live Debugging breakpoints to validate the change.
+4. By spinning up the Codespaces, you will have a VSCode environment where you will be able to make code changes to fix an application bug, redeploy the changes to the cluster, and then set Live Debugging breakpoints to validate the change.
 
 5. Next, forward traffic from the service to your local machine using:
 
