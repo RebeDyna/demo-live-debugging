@@ -30,7 +30,7 @@ languages that talk to each other over gRPC. It's setup to run inside a Kind Kub
 
 ## Quickstart
 
-1. Start a codespaces workspace by going to Codespaces and then selecting 'New with options' or by [clicking here](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=846712282&skip_quickstart=true). You will need your Dynatrace tenant endpoint which should look something like 'https://abcd1234.live.dynatrace.com' as well as a Dynatrace API Token.
+1. Start a codespaces workspace by going to Codespaces and then selecting 'New with options' or by [clicking here](https://github.com/codespaces/new?hide_repo_select=true&ref=main&repo=846712282&skip_quickstart=true). You will need your Dynatrace tenant endpoint which should look something like 'https://abc12345.live.dynatrace.com' as well as a Dynatrace API Token.
 
 2. The codespace will automatically create a [Kind](https://kind.sigs.k8s.io/) Kubernetes cluster and deploy the microservices application. Once the codespaces is started the following services should be running in the Kind cluster:
 
