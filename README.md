@@ -69,6 +69,12 @@ It should be in a `Running` state:
   kind-k8s   https://abc123.live.dynatrace.com/api     Running      98s
   ```
 
+You may need to also restart the AdService pod to ensure the live debugger is enabled properly. To do so, run the following command after the Dynakube is in a running state:
+
+  ```
+  kubectl rollout restart deployment/adservice
+  ```
+
 4. By spinning up the Codespaces, you will have a VSCode environment where you will be able to make code changes to fix an application bug, redeploy the changes to the cluster, and then set Live Debugging breakpoints to validate the change.
 
 5. Next, forward traffic from the service to your local machine using:
