@@ -210,6 +210,10 @@ spec:
     #     [connectivity]
     #     networkZone=
     #   valueFrom: myCustomPropertiesConfigMap
+    customProperties:
+       value: |
+         [debugging]
+         debugging_enabled=true    
 
     # Optional: Specifies the name of a secret containing a TLS certificate, a TLS key and the TLS key's password to be used by ActiveGate instances
     # If unset, a self-signed certificate is used
