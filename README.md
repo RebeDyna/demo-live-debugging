@@ -1,6 +1,6 @@
 # Dynatrace Live Debugger End to End Demo Environment
 
-Check out a Live Walkthrough of this repo on YouTube here: (Simplify Your Dev Workflow with Live Debugger)[https://dt-url.net/YouTube-Live-Debugger]
+Check out a Live Walkthrough of this repo on YouTube here: [Simplify Your Dev Workflow with Live Debugger](https://dt-url.net/YouTube-Live-Debugger)
 
 The Demo environment will showcase the following:
 
