@@ -120,7 +120,7 @@ spec:
       # Optional: If you want to use CSIDriver; disable if your cluster does not have 'nodes' to fall back to the volume approach.
       # Defaults to false
       #
-      # useCSIDriver: true
+      useCSIDriver: true
 
       # Optional: The URI of the image that contains the codemodules specific OneAgent that will be injected into pods and applications.
       # For an example of a Dockerfile creating such an image, see https://dt-url.net/operator-docker-samples
@@ -156,7 +156,7 @@ spec:
     # Defaults to the latest ActiveGate image on the tenant's registry
     # Example: "ENVIRONMENTID.live.dynatrace.com/linux/activegate:latest"
     #
-    image: "dxf05642.sprint.dynatracelabs.com/linux/activegate:1.313.24"
+    image: "dxf05642.sprint.dynatracelabs.com/linux/activegate:1.315.25-raw"
 
     # Optional: Sets how many ActiveGate pods are spawned by the StatefulSet
     # Defaults to "1"
